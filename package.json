@@ -1,0 +1,13 @@
+{
+  "name": "create-server",
+  "version": "1.0.0",
+  "description": "​\r 1. Crear el primer servidor con nodejs que atienda solicitudes y devuelva respuestas\r 2.  Repasar etiquetas html y css\r ​",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
