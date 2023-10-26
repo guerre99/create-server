@@ -8,25 +8,41 @@ const server = http.createServer((request, response) => {
     console.log(path)
 
     if (path === '/' || path === '/index.html') {
-		response.statusCode = 200
-        response.write(fs.readFileSync('index.html','utf-8'))
-        response.end()
+        fs.readFile('index.html',(err,html)=> {
+            if(err) throw err
+            response.statusCode = 200
+            response.setHeader('Content-Type','text/html')
+            response.end(html)
+        })
+            
     }else if(path === '/css/styles.css'){
-        response.statusCode = 200
-        response.write(fs.readFileSync('css/styles.css','utf-8'))
-        response.end()
+        fs.readFile('css/styles.css',(err,css)=> {
+            if(err) throw err
+            response.statusCode = 200
+            response.setHeader('Content-Type','text/css')
+            response.end(css)
+        })
     }else if(path === '/html/about.html'){
-        response.statusCode = 200
-        response.write(fs.readFileSync('html/about.html','utf-8'))
-        response.end()
+        fs.readFile('html/about.html',(err,html)=> {
+            if(err) throw err
+            response.statusCode = 200
+            response.setHeader('Content-Type','text/html')
+            response.end(html)
+        })
     }else if(path === '/html/contact.html'){
-        response.statusCode = 200
-        response.write(fs.readFileSync('html/contact.html','utf-8'))
-        response.end()
+        fs.readFile('html/contact.html',(err,html)=> {
+            if(err) throw err
+            response.statusCode = 200
+            response.setHeader('Content-Type','text/html')
+            response.end(html)
+        })
     }else {
-		response.statusCode = 404
-		response.write(fs.readFileSync('html/404.html','utf-8'))
-        response.end()
+		fs.readFile('html/404.html',(err,html)=> {
+            if(err) throw err
+            response.statusCode = 404
+            response.setHeader('Content-Type','text/html')
+            response.end(html)
+        })
 	}
 })
 
